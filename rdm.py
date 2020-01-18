@@ -5,10 +5,11 @@ import numpy as np
 from matplotlib import pyplot as pyplot
 
 class Rdm:
-  def __init__(self, file_name, arch):
+  def __init__(self, file_name, arch, image_set):
     super().__init__()
     self.file_name = file_name
     self.arch = arch
+    self.image_set = image_set
     self.data = squareform(loadmat())
     self.mean = find_mean()
     self.std = find_std()
@@ -32,7 +33,8 @@ class Rdm:
     min_std = (min_data - self.mean) // self.std
     max_std = (max_data - self.mean) // self.std
 
-    results = open(self.arch + '.txt', 'a+')
+    path = os.path.join('results', self.image_set, self.arch + '.txt')
+    results = open(path, 'a+')
     results.write('Least 5 values: \n')
     for val in min_std:
       results.write('The value {} lies in range {}σ and {}σ\n'.format(min_data[val], val, val + 1))
