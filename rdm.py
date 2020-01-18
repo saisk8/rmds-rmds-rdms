@@ -22,11 +22,23 @@ class Rdm:
   def find_std(self):
     return np.std(self.data)
 
-  def plot(self):
-    # the data points
-    plt.scatter(x, self.data)
-    # the mean
-    plt.plot(self.mean, self.mean)
-    # save plot
-    plt.savefig(self.arch)
+  def analyse():
+    min_idx = np.argpartition(self.data, 5)[:5]
+    max_idx = np.argpartition(self.data, -5)[:5]
+
+    min_data = self.data[min_idx]
+    max_data = self.data[max_idx]
+
+    min_std = (min_data - self.mean) // self.std
+    max_std = (max_data - self.mean) // self.std
+
+    results = open(self.arch + '.txt', 'a+')
+    results.write('Least 5 values: \n')
+    for val in min_std:
+      results.write('The value {} lies in range {}σ and {}σ\n'.format(min_data[val], val, val + 1))
+    results.write('Top 5 values: \n')
+    for val in max_std:
+      results.write('The value {} lies in range {}σ and {}σ\n'.format(max_data[val], val, val + 1))
+    results.close()
+
 
