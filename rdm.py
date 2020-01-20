@@ -29,7 +29,8 @@ class Rdm:
 
         min_data = self.data[min_idx]
         max_data = self.data[max_idx]
-
+        self.plot(min_idx)
+        self.plot(max_idx, is_min=False)
         min_std = (min_data - self.mean) // self.std
         max_std = (max_data - self.mean) // self.std
 
@@ -46,3 +47,47 @@ class Rdm:
             results.write('The value {} lies in range {}σ and {}σ\n'.format(
                 max_data[idx], val, val + 1))
         results.close()
+
+    def plot(self, data, is_min=True):
+        fig = plt.figure(figsize=(9, 12))
+        ax = []
+        image_set = self.fpath.split('/')[-3]
+
+        for idx, item in enumerate(data):
+            i = item // 92
+            j = item % 92
+            img1, img2 = self.get_img(i, j, image_set)
+            ax.append(fig.add_subplot(1, 1, 1))
+            ax[-1].set_title("RDM value: "+str(self.data[item]))
+            plt.imshow(img1)
+            ax.append(fig.add_subplot(1, 1, 2))
+            ax[-1].set_title("RDM value: "+str(self.data[item]))
+            plt.imshow(img2)
+            if is_min:
+                save_path = 'sim-{}.png'.format(idx)
+            else:
+                save_path = 'dis-{}.png'.format(idx)
+            plt.savefig(os.path.join(self.fpath, save_path))
+
+    def get_img(self, i, j, image_set):
+        if image_set is '92':
+            i = str(i) if i > 9 else '0' + str(i)
+            j = str(j) if j > 9 else '0' + str(j)
+        else:
+            if i < 10:
+                i = '00' + str(i)
+            elif i < 100:
+                i = '0' + str(i)
+            else:
+                i = str(i)
+
+            if j < 10:
+                j = '00' + str(j)
+            elif j < 100:
+                j = '0' + str(j)
+            else:
+                j = str(j)
+
+        img1 = plt.imread('data/{}images/{}.jpg'.format(image_set, i))
+        img2 = plt.imread('data/{}images/{}.jpg'.format(image_set, j))
+        return img1, img2
