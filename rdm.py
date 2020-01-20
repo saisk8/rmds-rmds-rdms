@@ -2,7 +2,8 @@ import os
 from scipy import io as sio
 from scipy.spatial.distance import squareform
 import numpy as np
-from matplotlib import pyplot as pyplot
+from matplotlib import pyplot as plt
+from tqdm import tqdm
 
 
 class Rdm:
@@ -49,28 +50,25 @@ class Rdm:
         results.close()
 
     def plot(self, data, is_min=True):
-        fig = plt.figure(figsize=(9, 12))
-        ax = []
+        fig, axes = plt.subplots(nrows=1, ncols=2, figsize=(6, 3))
         image_set = self.fpath.split('/')[-3]
 
-        for idx, item in enumerate(data):
+        for idx, item in enumerate(tqdm(data)):
             i = item // 92
             j = item % 92
-            img1, img2 = self.get_img(i, j, image_set)
-            ax.append(fig.add_subplot(1, 1, 1))
-            ax[-1].set_title("RDM value: "+str(self.data[item]))
-            plt.imshow(img1)
-            ax.append(fig.add_subplot(1, 1, 2))
-            ax[-1].set_title("RDM value: "+str(self.data[item]))
-            plt.imshow(img2)
+            img1, img2 = self.get_img(i + 1, j + 1, image_set)
+            fig.suptitle("RDM value: "+str(self.data[item]))
+            axes[0].imshow(img1)
+            axes[1].imshow(img2)
             if is_min:
                 save_path = 'sim-{}.png'.format(idx)
             else:
                 save_path = 'dis-{}.png'.format(idx)
             plt.savefig(os.path.join(self.fpath, save_path))
+        plt.close(fig)
 
     def get_img(self, i, j, image_set):
-        if image_set is '92':
+        if image_set == '92':
             i = str(i) if i > 9 else '0' + str(i)
             j = str(j) if j > 9 else '0' + str(j)
         else:
@@ -88,6 +86,8 @@ class Rdm:
             else:
                 j = str(j)
 
-        img1 = plt.imread('data/{}images/{}.jpg'.format(image_set, i))
-        img2 = plt.imread('data/{}images/{}.jpg'.format(image_set, j))
+        img1 = plt.imread(
+            'data/{}images/image_{}.jpg'.format(image_set, i))
+        img2 = plt.imread(
+            'data/{}images/image_{}.jpg'.format(image_set, j))
         return img1, img2
