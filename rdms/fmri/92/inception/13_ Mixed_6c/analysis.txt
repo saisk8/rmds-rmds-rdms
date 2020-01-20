@@ -1,0 +1,13 @@
+Arch: inception, mean: 0.3433836592405263, std: 0.11686657632797381
+Least 5 values: 
+The value 0.03159978387014528 lies in range -3.0σ and -2.0σ
+The value 0.03339058072157475 lies in range -3.0σ and -2.0σ
+The value 0.03627978614413763 lies in range -3.0σ and -2.0σ
+The value 0.03703587398777419 lies in range -3.0σ and -2.0σ
+The value 0.038099903570386506 lies in range -3.0σ and -2.0σ
+Top 5 values: 
+The value 0.6530230708988829 lies in range 2.0σ and 3.0σ
+The value 0.6573554306701154 lies in range 2.0σ and 3.0σ
+The value 0.6605051155937445 lies in range 2.0σ and 3.0σ
+The value 0.666864273411357 lies in range 2.0σ and 3.0σ
+The value 0.6734797159942782 lies in range 2.0σ and 3.0σ

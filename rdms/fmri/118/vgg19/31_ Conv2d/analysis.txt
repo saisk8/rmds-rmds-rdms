@@ -1,0 +1,13 @@
+Arch: vgg19, mean: 0.378352949217746, std: 0.091350027585154
+Least 5 values: 
+The value 0.14802090344927554 lies in range -3.0σ and -2.0σ
+The value 0.1448532574161544 lies in range -3.0σ and -2.0σ
+The value 0.1439244675502186 lies in range -3.0σ and -2.0σ
+The value 0.1304259149664182 lies in range -3.0σ and -2.0σ
+The value 0.128059742841507 lies in range -3.0σ and -2.0σ
+Top 5 values: 
+The value 0.6502713848282137 lies in range 2.0σ and 3.0σ
+The value 0.6547159185469564 lies in range 3.0σ and 4.0σ
+The value 0.6557529990436994 lies in range 3.0σ and 4.0σ
+The value 0.6644595219246505 lies in range 3.0σ and 4.0σ
+The value 0.6718658381326742 lies in range 3.0σ and 4.0σ
