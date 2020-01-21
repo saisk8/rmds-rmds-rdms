@@ -1,0 +1,28 @@
+EVC
+mean: 0.45702029007483014, std: 0.1767494611332644
+Least 5 values: 
+The value 0.35716135725927844 lies in range -1.0σ and 0.0σ
+The value 0.34178943532641487 lies in range -1.0σ and 0.0σ
+The value 0.35349085679546816 lies in range -1.0σ and 0.0σ
+The value 0.36314099408263917 lies in range -1.0σ and 0.0σ
+The value 0.3633820509959878 lies in range -1.0σ and 0.0σ
+Top 5 values: 
+The value 0.5856927504760424 lies in range 0.0σ and 1.0σ
+The value 0.5861845511530313 lies in range 0.0σ and 1.0σ
+The value 0.5935350161791859 lies in range 0.0σ and 1.0σ
+The value 0.5991588864716593 lies in range 0.0σ and 1.0σ
+The value 0.5965704592360807 lies in range 0.0σ and 1.0σ
+IT
+mean: 0.5679502478175298, std: 0.1241775307535698
+Least 5 values: 
+The value 0.4929127364571117 lies in range -1.0σ and 0.0σ
+The value 0.5025774713880227 lies in range -1.0σ and 0.0σ
+The value 0.5029315931491882 lies in range -1.0σ and 0.0σ
+The value 0.5036911770221539 lies in range -1.0σ and 0.0σ
+The value 0.5041613669231435 lies in range -1.0σ and 0.0σ
+Top 5 values: 
+The value 0.7537979106409768 lies in range 1.0σ and 2.0σ
+The value 0.754709249004225 lies in range 1.0σ and 2.0σ
+The value 0.7648426504099002 lies in range 1.0σ and 2.0σ
+The value 0.7748007332031737 lies in range 1.0σ and 2.0σ
+The value 0.7716422674566393 lies in range 1.0σ and 2.0σ
