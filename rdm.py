@@ -54,8 +54,13 @@ class Rdm:
         image_set = self.fpath.split('/')[-3]
 
         for idx, item in enumerate(tqdm(data)):
-            i = item // 92
-            j = item % 92
+            if image_set == '92':
+                i = item // 92
+                j = item % 92
+            else:
+                i = item // 118
+                j = item % 118
+
             img1, img2 = self.get_img(i + 1, j + 1, image_set)
             fig.suptitle("RDM value: "+str(self.data[item]))
             axes[0].imshow(img1)
