@@ -1,0 +1,13 @@
+Arch: alexnet, mean: 0.738588516585061, std: 0.1365052943833046
+Least 5 values: 
+The value 0.2628565127775404 lies in range -4.0σ and -3.0σ
+The value 0.2600839363042009 lies in range -4.0σ and -3.0σ
+The value 0.28862443635835056 lies in range -4.0σ and -3.0σ
+The value 0.2645760134344385 lies in range -4.0σ and -3.0σ
+The value 0.2961229534237514 lies in range -4.0σ and -3.0σ
+Top 5 values: 
+The value 0.9983233062974076 lies in range 1.0σ and 2.0σ
+The value 0.9997976551921776 lies in range 1.0σ and 2.0σ
+The value 1.006090432739841 lies in range 1.0σ and 2.0σ
+The value 1.0086879026730586 lies in range 1.0σ and 2.0σ
+The value 1.021186588527686 lies in range 2.0σ and 3.0σ
